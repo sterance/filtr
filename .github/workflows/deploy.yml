@@ -12,6 +12,7 @@ concurrency:
 
 jobs:
   build-and-deploy:
+    if: vars.ENABLE_DEPLOY == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
