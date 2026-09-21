@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 28 100 43">
+  <g transform="translate(-6.25 12.5) scale(.375)">
+    <path d="M 270,50
+             L 270,150
+             C 220,120 170,120 120,145
+             C 90,160 30,140 30,100
+             C 30,60 90,40 120,55
+             C 170,80 220,80 270,50 Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="8"
+          stroke-linejoin="round"
+          stroke-linecap="round" />
+    <circle cx="90" cy="100" r="25" fill="none" stroke="currentColor" stroke-width="8" />
+  </g>
+</svg>
