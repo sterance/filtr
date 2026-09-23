@@ -1,0 +1,72 @@
+.number-field .MuiInputLabel-root {
+  color: var(--text-muted);
+  overflow: visible;
+}
+
+.number-field .MuiInputLabel-root.Mui-focused {
+  color: var(--accent);
+}
+
+.number-field .MuiInputLabel-root.Mui-disabled {
+  color: var(--text-muted);
+}
+
+.number-field .MuiOutlinedInput-root {
+  padding-right: 0;
+  color: var(--text);
+}
+
+.number-field .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: var(--border);
+}
+
+.number-field .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--border);
+}
+
+.number-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--focus-ring);
+}
+
+.number-field .MuiOutlinedInput-root .MuiInputBase-input {
+  width: 3ch;
+  color: var(--text);
+  text-align: center;
+}
+
+.number-field .MuiOutlinedInput-root.Mui-disabled {
+  color: var(--text-muted);
+}
+
+.number-field__adornment {
+  flex-direction: column;
+  max-height: unset;
+  align-self: stretch;
+  border-left: 1px solid var(--border);
+  margin-left: 0;
+  padding: 0;
+}
+
+.number-field__adornment button {
+  padding: 0;
+  margin: 0;
+  min-width: auto;
+  flex: 1;
+  border-radius: 4px;
+  color: var(--text);
+  background-color: var(--surface);
+}
+
+.number-field__adornment button:hover {
+  background-color: var(--hover);
+}
+
+.number-field__icon--up {
+  transform: translateY(2px);
+  color: var(--text);
+}
+
+.number-field__icon--down {
+  transform: translateY(-2px);
+  color: var(--text);
+}

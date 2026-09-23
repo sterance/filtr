@@ -83,68 +83,10 @@ a {
 
 /* ---------------------------------------------------------------------------
    Layout
+   Component- and page-specific rules live next to their component instead
+   of here (see src/components/*.css and src/pages/*.css). Only the app
+   shell's truly global rules stay in this file.
    ------------------------------------------------------------------------- */
-
-.input-container {
-  width: min(800px, 100%);
-  margin-inline: auto;
-}
-
-.input-options {
-  width: 100%;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  width: 100%;
-  color: var(--text);
-  padding: 0.35rem;
-  border: 2px solid transparent;
-  border-radius: var(--radius);
-  background: transparent;
-  cursor: pointer;
-}
-
-.image-container:hover {
-  background: var(--hover);
-}
-
-.image-container.is-selected {
-  border-color: transparent;
-  color: var(--accent);
-}
-
-.selected-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 300px;
-  padding: 1rem;
-}
-
-.selected-image .theme-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.theme-image {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  transition: color var(--transition) ease;
-}
-
-.theme-image svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
 .page {
   flex: 1;
@@ -152,11 +94,6 @@ a {
   max-width: var(--content-width);
   margin-inline: auto;
   padding: 2rem 1.25rem;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
 }
 
 .page:focus {

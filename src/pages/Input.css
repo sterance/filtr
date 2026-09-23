@@ -1,0 +1,168 @@
+.input-container {
+  width: min(800px, 100%);
+  margin-inline: auto;
+  container-type: inline-size;
+  container-name: input;
+}
+
+.input-options {
+  width: 100%;
+}
+
+.input-option {
+  flex: 1;
+  min-width: 0;
+}
+
+.selected-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: clamp(140px, 45cqi, 300px);
+  padding: 1rem;
+}
+
+.selected-image .theme-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.input-width-control {
+  height: auto;
+  align-self: stretch;
+  align-items: center;
+}
+
+.dimension-label {
+  align-self: center;
+  white-space: nowrap;
+}
+
+.input-slider .MuiSlider-thumb {
+  background-color: var(--accent);
+}
+
+.input-slider .MuiSlider-track {
+  background-color: var(--accent);
+}
+
+.input-slider .MuiSlider-rail {
+  background-color: var(--border);
+}
+
+.input-slider--vertical {
+  margin-bottom: 8px !important;
+}
+
+.input-slider--horizontal {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.input-details-row {
+  width: 100%;
+}
+
+.input-heading {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.depth-input-field .MuiOutlinedInput-root,
+.depth-input-field .MuiInputAdornment-root,
+.depth-unit-toggle,
+.depth-unit-toggle .MuiToggleButton-root {
+  height: 100%;
+}
+
+.depth-input-field .MuiInputAdornment-root {
+  max-height: none;
+}
+
+.depth-input-field,
+.input-field {
+  width: 50%;
+  color: var(--text);
+}
+
+.depth-input-field .MuiOutlinedInput-root {
+  padding-right: 0;
+  color: var(--text);
+}
+
+.depth-input-field .MuiOutlinedInput-root fieldset {
+  border-color: var(--border);
+}
+
+.depth-input-field .MuiOutlinedInput-root:hover fieldset {
+  border-color: var(--accent);
+}
+
+.depth-input-field .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: var(--accent);
+}
+
+.depth-input-field .MuiOutlinedInput-root .MuiInputBase-input,
+.depth-input-field .MuiInputLabel-root,
+.input-field .MuiSelect-icon {
+  color: var(--text);
+}
+
+.depth-input-field .MuiInputLabel-root.Mui-focused {
+  color: var(--text);
+}
+
+.depth-unit-toggle .MuiToggleButton-root {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.depth-unit-toggle .MuiToggleButton-root:hover {
+  background-color: var(--hover);
+}
+
+.depth-unit-toggle .MuiToggleButton-root.Mui-selected,
+.depth-unit-toggle .MuiToggleButton-root.Mui-selected:hover {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.input-field:hover,
+.input-field:focus {
+  color: var(--text);
+}
+
+.input-field .MuiOutlinedInput-root {
+  color: var(--text);
+}
+
+.input-field .MuiOutlinedInput-root fieldset {
+  border-color: var(--border);
+}
+
+.input-field .MuiOutlinedInput-root:hover fieldset {
+  border-color: var(--accent);
+}
+
+.input-field .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: var(--accent);
+}
+
+.input-field .MuiOutlinedInput-root .MuiInputBase-input,
+.input-field .MuiOutlinedInput-root .MuiSelect-select {
+  color: var(--text);
+}
+
+.input-field .MuiSelect-icon {
+  color: var(--text);
+}
+
+.input-field .MuiInputLabel-root {
+  color: var(--text);
+}
+
+.input-field .MuiInputLabel-root.Mui-focused {
+  color: var(--text);
+}

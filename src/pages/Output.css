@@ -1,0 +1,35 @@
+.output-container {
+  width: min(800px, 100%);
+  margin-inline: auto;
+  container-type: inline-size;
+  container-name: output;
+}
+
+.output-heading {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.output-row {
+  padding: 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: background-color var(--transition);
+}
+
+.output-row:hover {
+  background-color: var(--hover);
+}
+
+.output-label {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.output-value {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 600;
+}

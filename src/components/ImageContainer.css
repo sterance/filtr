@@ -1,0 +1,36 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  color: var(--text);
+  padding: 0.35rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  cursor: pointer;
+}
+
+.image-container:hover {
+  background: var(--hover);
+}
+
+.image-container.is-selected {
+  border-color: transparent;
+  color: var(--accent);
+}
+
+.theme-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  transition: color var(--transition) ease;
+}
+
+.theme-image svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

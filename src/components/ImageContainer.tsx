@@ -1,3 +1,5 @@
+import "./ImageContainer.css";
+
 type ImageContainerProps = {
   imagePath: string;
   selected?: boolean;
