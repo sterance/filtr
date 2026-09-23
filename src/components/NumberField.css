@@ -70,3 +70,25 @@
   transform: translateY(-2px);
   color: var(--text);
 }
+
+@media (max-width: 600px) {
+  .number-field .number-field__adornment {
+    display: none;
+  }
+
+  .number-field .MuiOutlinedInput-root .MuiInputBase-input {
+    padding-inline: 0;
+  }
+
+  .number-field .MuiInputBase-input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+
+  .number-field .MuiInputBase-input[type="number"]::-webkit-inner-spin-button,
+  .number-field .MuiInputBase-input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+}
