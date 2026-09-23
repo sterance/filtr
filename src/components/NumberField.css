@@ -76,8 +76,15 @@
     display: none;
   }
 
+  .number-field {
+    margin-block: auto !important;
+  }
+
   .number-field .MuiOutlinedInput-root .MuiInputBase-input {
+    align-self: center;
     padding-inline: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .number-field .MuiInputBase-input[type="number"] {
