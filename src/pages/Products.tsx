@@ -1,3 +1,12 @@
+import { Typography } from "@mui/material";
+import "./Products.css";
+
 export function Products() {
-  return <h1>Products</h1>;
+  return (
+    <>
+      <Typography className="products-heading" variant="h4" align="center">
+        Products
+      </Typography>
+    </>
+  );
 }

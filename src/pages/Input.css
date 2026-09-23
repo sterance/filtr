@@ -166,3 +166,31 @@
 .input-field .MuiInputLabel-root.Mui-focused {
   color: var(--text);
 }
+
+.input-menu.MuiPaper-root {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+.input-menu .MuiMenuItem-root {
+  color: var(--text);
+}
+
+.input-menu .MuiMenuItem-root:hover {
+  background-color: var(--hover);
+}
+
+.input-menu .MuiMenuItem-root.Mui-selected,
+.input-menu .MuiMenuItem-root.Mui-selected:hover {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+}
+
+:root[data-theme="dark"] .input-menu.MuiPaper-root {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .input-menu .MuiMenuItem-root {
+  color: var(--text);
+}

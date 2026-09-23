@@ -9,15 +9,16 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { DimensionContext } from "./DimensionContext.tsx";
 import { ImageContainer } from "../components/ImageContainer.tsx";
 import NumberField from "../components/NumberField.tsx";
+import { roundTo } from "../utils/number.ts";
 import complexImage from "../media/complex.svg?raw";
 import rectangularImage from "../media/rectangular.svg?raw";
 import roundImage from "../media/round.svg?raw";
 import "./Input.css";
 
 const images = [
-  { name: "Complex", image: complexImage },
-  { name: "Rectangular", image: rectangularImage },
   { name: "Round", image: roundImage },
+  { name: "Rectangular", image: rectangularImage },
+  { name: "Complex", image: complexImage },
 ];
 
 export function Input() {
@@ -27,12 +28,12 @@ export function Input() {
   const setLength = dimensionContext?.setLength ?? (() => {});
   const setWidth = dimensionContext?.setWidth ?? (() => {});
   const setDepth = dimensionContext?.setDepth ?? (() => {});
-  const [selectedImage, setSelectedImage] = useState(complexImage);
+  const [selectedImage, setSelectedImage] = useState(roundImage);
   const [surface, setSurface] = useState<string | null>(null);
   const [depthUnit, setDepthUnit] = useState<"cm" | "m">("m");
   const [depthInput, setDepthInput] = useState<string | null>(() => {
     if (dimensionContext?.depth === null || dimensionContext?.depth === undefined) return null;
-    return String(depthUnit === "m" ? dimensionContext.depth : dimensionContext.depth * 100);
+    return String(depthUnit === "m" ? dimensionContext.depth : roundTo(dimensionContext.depth * 100));
   });
 
   const handleDepthChange = (value: string) => {
@@ -45,7 +46,7 @@ export function Input() {
 
     const numericValue = Number(nextValue);
     if (!Number.isNaN(numericValue)) {
-      setDepth(depthUnit === "cm" ? numericValue / 100 : numericValue);
+      setDepth(depthUnit === "cm" ? roundTo(numericValue / 100) : numericValue);
     }
   };
 
@@ -61,12 +62,15 @@ export function Input() {
 
     const numericValue = Number(depthInput);
     if (!Number.isNaN(numericValue)) {
-      setDepthInput(unit === "cm" ? String(numericValue * 100) : String(numericValue / 100));
+      setDepthInput(unit === "cm" ? String(roundTo(numericValue * 100)) : String(roundTo(numericValue / 100)));
     }
   };
 
   return (
     <Stack className="input-container" spacing={3}>
+      <Typography className="input-heading" variant="h4" align="center">
+        Input
+      </Typography>
       <Stack direction="row" spacing={1}>
         <div className="selected-image" aria-live="polite">
           <div className="theme-image" aria-label="Selected shape" dangerouslySetInnerHTML={{ __html: selectedImage }} />
@@ -82,7 +86,7 @@ export function Input() {
         <NumberField min={1} max={16} value={length} onChange={setLength} />
         <Slider size="small" min={1} max={16} value={length} onChange={(_, newValue) => setLength(typeof newValue === "number" ? newValue : newValue[0])} aria-label="Small" valueLabelDisplay="auto" className="input-slider input-slider--horizontal" />
       </Stack>
-      <Typography className="input-heading" variant="h5" align="center">
+      <Typography className="input-heading" variant="h6" align="center">
         Shape
       </Typography>
       <Stack className="input-options" direction="row" spacing={1}>
@@ -95,7 +99,7 @@ export function Input() {
           </Stack>
         ))}
       </Stack>
-      <Typography className="input-heading" variant="h5" align="center">
+      <Typography className="input-heading" variant="h6" align="center">
         Depth and Surface Type
       </Typography>
       <Stack direction="row" spacing={1} className="input-details-row">
@@ -122,7 +126,23 @@ export function Input() {
             },
           }}
         />
-        <TextField select label="Surface" variant="outlined" value={surface} onChange={(e) => setSurface(e.target.value)} className="input-field">
+        <TextField
+          select
+          label="Surface"
+          variant="outlined"
+          value={surface}
+          onChange={(e) => setSurface(e.target.value)}
+          className="input-field"
+          slotProps={{
+            select: {
+              MenuProps: {
+                slotProps: {
+                  paper: { className: "input-menu" },
+                },
+              },
+            },
+          }}
+        >
           <MenuItem value="Tile">Tile</MenuItem>
           <MenuItem value="Pebble">Pebble</MenuItem>
           <MenuItem value="Concrete">Concrete</MenuItem>

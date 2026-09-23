@@ -3,6 +3,7 @@ import { Stack, Typography } from "@mui/material";
 import "./Output.css";
 
 import { DimensionContext } from "./DimensionContext.tsx";
+import { roundTo } from "../utils/number.ts";
 
 export function Output() {
   const { length, width, depth } = useContext(DimensionContext) ?? {
@@ -14,17 +15,20 @@ export function Output() {
   const volumeLitres = useMemo(() => {
     if (depth === null) return null;
     const cubicMetres = length * width * depth;
-    return cubicMetres * 1000;
+    return roundTo(cubicMetres * 1000);
   }, [length, width, depth]);
 
   const cableLength = useMemo(() => {
     const longSide = Math.max(length, width);
     const shortSide = Math.min(length, width);
-    return Math.sqrt((longSide / 2) ** 2 + shortSide ** 2);
+    return roundTo(Math.sqrt((longSide / 2) ** 2 + shortSide ** 2));
   }, [length, width]);
 
   return (
     <Stack className="output-container" spacing={3}>
+      <Typography className="output-heading" variant="h4" align="center">
+        Output
+      </Typography>
       <Stack className="output-row" spacing={1}>
         <Typography className="output-label">Volume</Typography>
         <Typography className="output-value">{volumeLitres === null ? "—" : `${volumeLitres.toFixed(0)} L`}</Typography>
